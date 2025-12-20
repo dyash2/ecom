@@ -13,6 +13,7 @@ const Header = () => {
           <li>
             <Link to="/about" className="hover:text-blue-500">About</Link>
           </li>
+
           <li>
             <Link to="/contact-us" className="hover:text-blue-500">Contact Us</Link>
           </li>
