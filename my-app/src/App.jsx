@@ -1,14 +1,15 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Outlet } from "react-router";
 
 const App = () => {
   return (
-    <div className="bg-white min-h-screen w-full">
+    <div className="flex flex-col min-h-screen">
       <Header />
-
-      <main className="p-6">
+      <main className="flex-1 p-6">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

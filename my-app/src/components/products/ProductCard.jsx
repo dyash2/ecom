@@ -10,8 +10,8 @@ const ProductCard = ({ image, title, oldPrice, newPrice, save }) => {
     <>
       {/* Product Card */}
       <div className="relative">
-        <div className="bg-blue-100 overflow-hidden rounded-xl shadow text-center relative">
-          <img src={image} alt={title} className="w-full h-80 object-cover" />
+        <div className="bg-pink-100 overflow-hidden rounded-xl shadow text-center relative">
+          <img src={image} alt={title} className="w-full h-80 md:h-150 object-cover p-10" />
 
           <div
             className="absolute top-2 right-2 cursor-pointer"

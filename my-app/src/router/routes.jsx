@@ -29,12 +29,12 @@ const routes = [
         path: "profile",
         element: <Profile />,
       },
+      {
+        path: "/product-list",
+        element: <ProductList />,
+        errorElement: <ErrorPage />,
+      },
     ],
-  },
-  {
-    path: "/product-list",
-    element: <ProductList />,
-    errorElement: <ErrorPage />,
   },
 ];
 
