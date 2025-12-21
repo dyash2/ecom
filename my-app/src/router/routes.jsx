@@ -31,6 +31,11 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/product-list",
+    element: <ProductList />,
+    errorElement: <ErrorPage />,
+  },
 ];
 
 export default routes;
