@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
@@ -9,6 +10,7 @@ const ProductDetails = () => {
   const [openSection, setOpenSection] = useState(null);
 
   const toggle = (sec) => setOpenSection(openSection === sec ? null : sec);
+  const navigate = useNavigate();
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
@@ -32,9 +34,16 @@ const ProductDetails = () => {
             {description}
           </p>
 
-          <button className="mt-6 bg-pink-500 text-white px-6 py-3 rounded flex flex-row items-center gap-6">
-           <FaShoppingCart/> Add to Cart 
+          <button
+            className="mt-6 bg-pink-500 text-white px-6 py-3 rounded flex flex-row items-center gap-6 
+             hover:shadow-lg hover:scale-105 transition-all duration-200"
+            onClick={() =>{ navigate("/cart"); 
+              console.log("Cart Clicked");
+            }}
+          >
+            <FaShoppingCart /> Add to Cart
           </button>
+
 
           {/* Accordion */}
           <div className="mt-8 space-y-4 text-sm">

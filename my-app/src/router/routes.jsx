@@ -5,6 +5,7 @@ import About from "../pages/About.jsx";
 import Profile from "../pages/Profile.jsx";
 import ProductList from "../pages/ProductList.jsx";
 import ProductDetails from "../pages/ProductDetails.jsx";
+import Cart from "../pages/Cart.jsx";
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
       {
         path: "product/:id",
         element: <ProductDetails />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
       {
         path: "/product-list",
