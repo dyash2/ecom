@@ -1,7 +1,7 @@
 import ProductGrid from "../components/products/ProductGrid";
 import PromoDialog from "../components/PromoDialog";
 import { Hero } from "../components/Hero";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const Home = () => {
   const navigate = useNavigate();

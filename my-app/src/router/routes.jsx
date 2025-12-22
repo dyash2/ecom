@@ -2,9 +2,9 @@ import App from "../App.jsx";
 import ErrorPage from "../components/ErrorPage.jsx";
 import Home from "../pages/Home.jsx";
 import About from "../pages/About.jsx";
-import ContactUs from "../pages/ContactUs.jsx";
 import Profile from "../pages/Profile.jsx";
 import ProductList from "../pages/ProductList.jsx";
+import ProductDetails from "../pages/ProductDetails.jsx";
 
 const routes = [
   {
@@ -28,6 +28,10 @@ const routes = [
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "product/:id",
+        element: <ProductDetails />,
       },
       {
         path: "/product-list",

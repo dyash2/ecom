@@ -1,15 +1,18 @@
 import { FaShoppingCart, FaHeart, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({ image, title, oldPrice, newPrice, save }) => {
   const [isWishlist, setIsWishlist] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [addToCartDialog, setAddtoCartDialog] = useState(false);
+  const navigate = useNavigate();
+
 
   return (
     <>
       {/* Product Card */}
-      <div className="relative">
+      <div className="relative" onClick={() => navigate("/product-overview")}>
         <div className="bg-pink-100 overflow-hidden rounded-xl shadow text-center relative">
           <img src={image} alt={title} className="w-full h-80 md:h-150 object-cover p-10" />
 
