@@ -18,11 +18,13 @@ const ProductDetails = () => {
 
         {/* LEFT — Image */}
         <div className="rounded-lg overflow-hidden shadow-3xl bg-pink-200 w-120 "> <img src={image} alt="Product" className="w-full p-20" />
+
           {/* <div className="flex gap-3 mt-4">
             <img src={slide1} className="w-20 rounded shadow-xl" />
             <img src={slide1} className="w-20 rounded shadow-xl" />
             <img src={slide1} className="w-20 rounded shadow-xl" />
           </div> */}
+          
         </div>
 
         {/* RIGHT — Info */}

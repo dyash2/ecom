@@ -1,10 +1,14 @@
 import { Link } from "react-router";
 import { FaShoppingBag } from "react-icons/fa";
+import icon from "../assets/icons/icon.jpeg";
 
 const Header = () => {
   return (
     <div className="flex items-center justify-between bg-gray-100 px-8 py-4 shadow">
-      <a className="text-pink-500 text-3xl font-bold" href="/">My App</a>
+      <Link to="/" className="flex items-center gap-2 text-pink-500 font-bold text-2xl">
+        <img src={icon} alt="Icon" className="w-10 h-10 bg-transparent" />
+        BeautyBlow
+      </Link>
 
       <nav>
         <ul className="flex gap-6 text-lg font-medium">
