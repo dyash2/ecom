@@ -10,7 +10,7 @@ const ProductGrid = () => {
 
   useEffect(() => {
     fetchProducts()
-      .then((data) => setProducts(data.slice(0, 9)))
+      .then((data) => setProducts(data.slice(900, 910)))
       .finally(() => setLoading(false));
   }, []);
 
@@ -26,20 +26,22 @@ const ProductGrid = () => {
           return (
             <div
               key={item.id}
-              onClick={() => navigate(`/product/${item.id}`, {
-                state: {
-                  image: item.image,
-                  title: item.title,
-                  price: newPrice.toFixed(2),
-                  description: item.description,
-                },
-              })}
+              onClick={() =>
+                navigate(`/product/${item.id}`, {
+                  state: {
+                    image: item.image_link,
+                    title: item.name,
+                    price: newPrice.toFixed(2),
+                    description: item.description,
+                  },
+                })
+              }
               className="cursor-pointer"
             >
               <ProductCard
-                image={item.image}
-                title={item.title}
-                oldPrice={item.price.toFixed(2)}
+                image={item.image_link}         
+                title={item.name}               
+                oldPrice={item.price}
                 newPrice={newPrice.toFixed(2)}
                 save={discount}
               />

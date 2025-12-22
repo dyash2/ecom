@@ -17,7 +17,7 @@ const ProductCard = ({ image, title, oldPrice, newPrice, save }) => {
       })}
       >
         <div className="bg-pink-100 overflow-hidden rounded-xl shadow text-center relative">
-          <img src={image} alt={title} className="w-full h-80 md:h-150 object-contain p-5" />
+          <img src={image} alt={title} className="w-full h-60 md:h-80 object-contain p-5" />
 
           <div
             className="absolute top-2 right-2 cursor-pointer"
