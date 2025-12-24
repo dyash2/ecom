@@ -1,46 +1,59 @@
-import { Link } from "react-router";
-import { FaShoppingBag } from "react-icons/fa";
-import icon from "../assets/icons/icon.jpeg";
+import { useState } from "react";
+import { GrClose } from "react-icons/gr";
+import { GiHamburgerMenu } from "react-icons/gi";
+import icon from "../assets/icons/icon-bg.png";
 
-const Header = () => {
+function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <div className="flex items-center justify-between bg-gray-100 px-8 py-4 shadow">
-      <Link to="/" className="flex items-center gap-2 text-pink-500 font-bold text-2xl">
-        <img src={icon} alt="Icon" className="w-10 h-10 bg-transparent" />
-        BeautyBlow
-      </Link>
+    <header className="w-full border-b bg-gray-100">
+      <div className="flex items-center justify-between px-4 py-2 sm:px-8">
+        {/* Logo */}
+        <img src={icon} alt="Logo" className="h-10 w-auto" />
 
-      <nav>
-        <ul className="flex gap-6 text-lg font-medium">
-          {/* <form class="max-w-md mx-auto">
-            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-            <div class="relative">
-              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>
-              </div>
-              <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-              <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-            </div>
-          </form> */}
-          <li>
-            <Link to="/" className="hover:text-pink-500">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-pink-500">About</Link>
-          </li>
+        {/* Desktop Nav */}
+        <nav className="hidden sm:flex items-center gap-6 font-semibold">
+          <a href="#" className="hover:text-gray-500">Home</a>
+          <a href="#" className="hover:text-gray-500">About</a>
+          <a href="#" className="hover:text-gray-500">Contact</a>
+        </nav>
 
-          <li>
-            <Link to="/cart" className="hover:text-pink-500"><FaShoppingBag /></Link>
-          </li>
-          <li>
-            <Link to="/profile" className="hover:text-pink-500">Profile</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        {/* Desktop Search */}
+        <div className="hidden sm:block">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="rounded-lg border px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+          />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setShowMenu(!showMenu)}
+          className="sm:hidden text-xl"
+        >
+          {showMenu ? <GrClose /> : <GiHamburgerMenu />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {showMenu && (
+        <div className="sm:hidden flex flex-col gap-3 px-4 pb-4 font-semibold">
+          {/* Mobile Search */}
+          <input
+            type="text"
+            placeholder="Search..."
+            className="rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+          />
+
+          <a href="#" className="hover:text-gray-500">Home</a>
+          <a href="#" className="hover:text-gray-500">About</a>
+          <a href="#" className="hover:text-gray-500">Contact</a>
+        </div>
+      )}
+    </header>
   );
-};
+}
 
 export default Header;
